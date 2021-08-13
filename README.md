@@ -37,3 +37,12 @@ Execution -- run all commands from the ea-test-pubic directory:
     To run the application once cloned run the below:
 
         python .\source\execute.py
+
+
+Further Notes:
+I chose to primarly focus on the tasks provided, as I understood them, to keep the program simple. Should this ever need to be implemented for ongoing use I would include the following:
+    1. A more robust set of unit tests
+    2. More extensive error handling
+    3. Command Line input for input and output file details
+    4. Uplift rejected file to explain why the record was rejected
+
