@@ -14,14 +14,11 @@ Source Files:
     1. dataIO.py - handles file reading, transform/write, and delete
     2. dataQueries.py - contains the data queries discribed above
     3. dataValidaion.py - contains data validaion functions called by dataIO.py
-
     4. execute.py - runs the application against '.\data\in\Transaction.csv' and prints out the results (plus some tracking/logging details)
-
-    5. execute.py - runs the applicaion test suite against '.\test\in\*'
+    5. execute_tests.py - runs the applicaion test suite against '.\test\in\*'
 
 Data Files:
     1. .\data\in\Transacion.csv - data file provided
-
     2. .\test\in\test_data.csv - test data file containing subset and invalid rows
     3. .\test\in\incorrect.csv - contains an incorrectly formated CSV
 
