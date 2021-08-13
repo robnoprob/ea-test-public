@@ -1,0 +1,3 @@
+data/out/*
+test/out/*
+source/__pycache__/*
