@@ -37,6 +37,10 @@ Execution -- run all commands from the ea-test-pubic directory:
     To run the application once cloned run the below:
 
         python .\source\execute.py
+        
+    To run the unit tests once cloned run the below:
+
+        python .\source\execute_tests.py
 
 
 Further Notes:
