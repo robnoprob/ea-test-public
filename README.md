@@ -45,4 +45,6 @@ I chose to primarly focus on the tasks provided, as I understood them, to keep t
     2. More extensive error handling
     3. Command Line input for input and output file details
     4. Uplift rejected file to explain why the record was rejected
-
+    5. Uplift validation to include field not directly used by requested queries
+    6. Include batch IDs for traceability and unique outputs (e.g. <provided name>_<batch id>_<partition number>.json) 
+    7. Save Results

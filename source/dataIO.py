@@ -27,6 +27,8 @@ def csvJsonPanda(csvPath, jsonPath, fileBreak):
     rejectData = []
     rowCount = 0
     fileCount = 0
+    recordCount = 0
+    rejectCount = 0
     for index, csvRow in csvData.iterrows():
         #create hash id
         csvRow['hash'] = hash(csvRow.values.tobytes)
@@ -51,6 +53,7 @@ def csvJsonPanda(csvPath, jsonPath, fileBreak):
                 with open(Path(jsonPath + 'transactions_' + str(fileCount) + '.json'), 'w', encoding='utf-8') as jsonFile:
                     jsonFile.write(json.dumps(cleanData, indent=2))
                     print('Loop Generated ' + str(Path(jsonPath + 'transactions_' + str(fileCount) + '.json')))
+                    recordCount += len(cleanData)
                     cleanData = []
                     rowCount = 0
                     fileCount += 1
@@ -63,12 +66,17 @@ def csvJsonPanda(csvPath, jsonPath, fileBreak):
     with open(Path(jsonPath + 'transactions_' + str(fileCount) + '.json'), 'w', encoding='utf-8') as jsonFile:
         jsonFile.write(json.dumps(cleanData, indent=2))
         print('Final Generated ' + str(Path(jsonPath + 'transactions_' + str(fileCount) + '.json')))
-
+        recordCount += len(cleanData)
     
     #Save rejects for investigation
     with open(Path(jsonPath + 'transactions_reject.json'), 'w', encoding='utf-8') as jsonFile:
         jsonFile.write(json.dumps(rejectData, indent=2))
         print('Final Generated ' + str(Path(jsonPath + 'transactions_reject.json')))
+        rejectCount += len(rejectData)
+
+    #print summary
+    print('\nValidated Records: ' + str(recordCount))
+    print('Rejected Records: ' + str(rejectCount))
 
     return True
 
